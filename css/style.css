@@ -96,6 +96,10 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+	color: white;
+}
+
 
 .technology-section {
 	margin-top: 200px;
@@ -118,6 +122,11 @@ body {
 	box-sizing: border-box;
 }
 
+.box-right {
+	height: 100%;
+	width: 100%;
+}
+
 .box-left {
 	margin: 0px 0px 0px 30px;
 	max-width: calc(33.3333333333% - 30px);
@@ -138,18 +147,28 @@ body {
 
 .box-list {
 	display: grid;
-	grid-template-columns: repeat(6, 140px);
-	grid-auto-rows: 140px;
+	grid-template-columns: repeat(6, 1fr);
 	gap: 20px;
 	margin: 0px 40px 0px 0px;
+	width: 100%;
+	height: 100%;
 }
 
 .box-item {
 	display: flex;
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.02);
 	justify-content: center;
 	align-items: center;
 	border-radius: 5px;
+	aspect-ratio: 1 / 1;
+}
+
+.box-item-hovered:hover {
+	animation: box-item-hover__anim 0.3s linear forwards;
+}
+
+.box-item-hovered {
+	animation: box-item-unhover__anim 0.3s linear forwards;
 }
 
 .fa-brands {
@@ -203,7 +222,9 @@ body {
 	width: 100%;
 }
 
-.info {}
+.info {
+	padding: 20px 0px 0px 0px;
+}
 
 .info__title {
 	font-size: 54px;
@@ -242,6 +263,10 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
+	.box-list {
+		margin: 30px 40px 0px 0px;
+	}
+
 	.box-numbers {
 		margin-top: 20px;
 		gap: 30px;
@@ -249,6 +274,10 @@ body {
 
 	.box-left {
 		flex: 0 0;
+	}
+
+	.box-right {
+		margin: 0px 0px 0px 30px;
 	}
 
 	.row {
@@ -284,10 +313,58 @@ body {
 
 @media screen and (max-width: 970px) {
 	.section-title {
-		font-size: 18px;
+		font-size: 64px;
 	}
 
 	.box-left {
 		margin-left: 10px;
+	}
+
+	.box-right {
+		margin: 0px 0px 0px 10px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.section-title {
+		font-size: 32px;
+	}
+
+	.fa-brands {
+		font-size: 24px;
+	}
+}
+
+@media screen and (max-width: 530px) {
+	.box-list {
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+}
+
+
+/*--------------------*/
+
+@keyframes box-item-hover__anim {
+	0% {
+		background: rgba(255, 255, 255, 0.02);
+	}
+
+	100% {
+		background-color: #5524df;
+		box-shadow: 0px 0px 10px #561fee;
+		transform: scale(1.1);
+	}
+}
+
+@keyframes box-item-unhover__anim {
+	0% {
+		background-color: #5524df;
+		transform: scale(1.1);
+	}
+
+	100% {
+		background: rgba(255, 255, 255, 0.02);
+		transform: scale(1);
 	}
 }
