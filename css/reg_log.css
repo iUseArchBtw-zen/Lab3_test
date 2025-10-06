@@ -1,12 +1,19 @@
-/* Загальні стилі */
+/* загальні стилі */
+
+html,
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     background-color: #111;
     color: white;
+    height: 100%;
+    overflow: hidden;
 }
 
-/* Шапка */
+
+/* шапка */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -20,17 +27,16 @@ header {
     z-index: 1000;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-/* Меню */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    width: 100%;
+}
+
+.nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .nav .menu {
@@ -38,10 +44,8 @@ header h1 {
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-left: auto;
 }
 
-/* Пункти меню */
 .nav .menu li {
     margin-left: 20px;
 }
@@ -60,39 +64,85 @@ header h1 {
     color: #ff0077;
 }
 
-/* Загальне */
-.hero {
+
+/* форми - центр екрану */
+
+.forms {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+
+/* контейнер форми */
+
+.form-container {
+    background-color: #222;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 0 10%;
 }
 
-.hero h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+
+/* заголовок форми */
+
+.form-container h2 {
+    margin-bottom: 25px;
+    color: #ffffff;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin-bottom: 2rem;
-}
 
-.hero a {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background: #ee0077;
-    border-radius: 30px;
+/* ввід інформації */
+
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #333;
     color: white;
-    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ee0077;
+    color: white;
+    font-size: 16px;
     font-weight: bold;
+    cursor: pointer;
     transition: background 0.3s ease;
 }
 
-.hero a:hover {
-    background: #c10061bc;
+.form-container button:hover {
+    background-color: #c10061bc;
+}
+
+
+/* посилання між формами */
+
+.switch-form {
+    margin-top: 15px;
+    display: block;
+    color: #ff66aa;
+    text-decoration: none;
+}
+
+.switch-form:hover {
+    text-decoration: underline;
 }
