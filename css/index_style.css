@@ -114,7 +114,7 @@ header h1 {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px;
+	padding: 20px 0px 20px 0px;
 }
 
 .menu {
@@ -123,16 +123,13 @@ header h1 {
 	margin: 0px 0px 0px 20px;
 }
 
-.menu a {
-	padding: 8px;
-}
-
 li {
 	font-size: 18px;
 }
 
 li a {
 	width: 100%;
+	padding: 5px;
 }
 
 .nav .menu li a {
@@ -395,7 +392,6 @@ a:hover {
 
 	.box-numbers {
 		margin-top: 20px;
-		gap: 30px;
 	}
 
 	.box-left {
