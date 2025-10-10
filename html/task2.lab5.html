@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Простий чат</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Ліва панель -->
+        <div class="input-box">
+            <h4>Повідомлення user1</h4>
+            <input type="text" id="msgUser1" placeholder="Введіть текст">
+            <button onclick="sendMessage(1)">Відправити</button>
+        </div>
+
+        <!-- Центральний чат -->
+        <div class="chat-box" id="chatBox">
+            <!-- Повідомлення -->
+        </div>
+
+        <!-- Права панель -->
+        <div class="input-box">
+            <h4>Повідомлення user2</h4>
+            <input type="text" id="msgUser2" placeholder="Введіть текст">
+            <button onclick="sendMessage(2)">Відправити</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage(user) {
+            let input = document.getElementById(user === 1 ? "msgUser1" : "msgUser2");
+            let messageText = input.value.trim();
+
+            if (messageText === "") return;
+
+            // створюється елемент повідомлення
+            let msgDiv = document.createElement("div");
+            msgDiv.classList.add("message");
+            msgDiv.classList.add(user === 1 ? "user1" : "user2");
+            msgDiv.textContent = "USER " + user + ": " + messageText;
+
+            // додається у чат
+            document.getElementById("chatBox").appendChild(msgDiv);
+
+            // очищаємо поле
+            input.value = "";
+
+            // автоматичний скрол до низу
+            let chatBox = document.getElementById("chatBox");
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+
+</html>
