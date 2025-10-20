@@ -6,36 +6,51 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Реєстрація - WebStudio</title>
 	<link rel="stylesheet" href="/Lab3/css/reg_log.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.4.3/imask.min.js"></script>
 </head>
 
 <body>
 	<section class="forms">
 		<div class="form-container">
 			<h2>Реєстрація</h2>
-			<form action="#" name="user_reg">
-				<input type="email" placeholder="Email" name="1">
-				<input type="password" placeholder="Пароль" name="2">
-				<input type="text" placeholder="прізвище " name="3">
-				<input type="text" placeholder="ім’я " name="4">
-				<input type="text" placeholder="по батькові" name="5">
+			<form action="#" name="user_reg" id="registerForm">
+				<input type="email" placeholder="Email" name="Email" required>
+				<div class="error-message" id="emailError"></div>
+				<input type="password" placeholder="Пароль" name="Пароль" required>
+				<div class="error-message" id="passError"></div>
+				<input type="text" placeholder="прізвище " name="Прізвище" required>
+				<input type="text" placeholder="ім’я " name="Ім’я" required>
+				<input type="text" placeholder="по батькові" name="По батькові">
 				<div class="date-of-birthday">
 					<label>Дата народження:</label>
-					<input type="date" name="6">
+					<input type="date" name="Дата народження">
 				</div>
-				<select name="select">
+				<div class="gender-group">
+					<label>Стать:</label><br>
+					<label><input type="radio" name="gender" value="Чоловіча"> Чоловіча</label>
+					<label><input type="radio" name="gender" value="Жіноча"> Жіноча</label>
+				</div>
+
+				<div class="phone-group">
+					<label for="phone">Телефон *</label>
+					<input type="text" id="phone" name="Телефон" placeholder="+38(0__) ___-__-__" required>
+					<div id="phoneError" class="error-message"></div>
+				</div>
+				<select name="Група">
 					<option value="IA-41" selected>IA-41</option>
 					<option value="IA-42">IA-42</option>
 					<option value="IA-43">IA-43</option>
 					<option value="IA-44">IA-44</option>
 				</select>
-				<input type="file" placeholder="виберіть файл" accept="image/png, image/jpeg" name="7">
-				<button type="button" onclick="getRegData()">Зареєструватися</button>
+				<input type="file" placeholder="виберіть файл" accept="image/png, image/jpeg" name="Фото">
+				<button type="submit">Зареєструватися</button>
 			</form>
 			<a href="login.html" class="switch-form">Авторизація</a>
 		</div>
 		<div id="dataTable"></div>
-		<button type="button" onclick="getCheckBoxStatus()">test</button>
-		<button type="button" onclick="rowDelete()">test</button>
+		<button type="button" onclick="deleteSelectedCheckbox()">удалить </button>
+		<br>
+		<button type="button" onclick="rowDublicate()">дублировать</button>
 	</section>
 
 	<script src="/Lab3/js/register.js"></script>

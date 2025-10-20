@@ -2,82 +2,82 @@
 <html lang="uk">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Реєстрація - WebStudio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.4.3/imask.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Реєстрація - WebStudio</title>
+	<link rel="stylesheet" href="/Lab3/css/style6.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.4.3/imask.min.js"></script>
 </head>
 
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="nav">
-                <div class="logo">WebStudio</div>
-            </div>
-        </div>
-    </header>
+	<header class="header">
+		<div class="container">
+			<div class="nav">
+				<div class="logo">WebStudio</div>
+			</div>
+		</div>
+	</header>
 
-    <section class="forms">
-        <div class="form-container">
-            <h2>Реєстрація</h2>
-            <form id="registerForm" action="#" method="post" novalidate>
-                <input type="text" id="login" placeholder="Логін" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Пароль" required>
+	<section class="forms">
+		<div class="form-container">
+			<h2>Реєстрація</h2>
+			<form id="registerForm" action="#" method="post" novalidate>
+				<input type="text" id="login" placeholder="Логін" required>
+				<input type="email" id="email" placeholder="Email" required>
+				<input type="password" id="password" placeholder="Пароль" required>
 
-                <div class="gender-group">
-                    <label>Стать:</label><br>
-                    <label><input type="radio" name="gender" value="male" required> Чоловіча</label>
-                    <label><input type="radio" name="gender" value="female" required> Жіноча</label>
-                </div>
+				<div class="gender-group">
+					<label>Стать:</label><br>
+					<label><input type="radio" name="gender" value="male" required> Чоловіча</label>
+					<label><input type="radio" name="gender" value="female" required> Жіноча</label>
+				</div>
 
-                <div class="phone-group">
-                    <label for="phone">Телефон *</label>
-                    <input type="text" id="phone" placeholder="+38(0__) ___-__-__" required>
-                    <div id="phoneError" class="error-message"></div>
-                </div>
+				<div class="phone-group">
+					<label for="phone">Телефон *</label>
+					<input type="text" id="phone" placeholder="+38(0__) ___-__-__" required>
+					<div id="phoneError" class="error-message"></div>
+				</div>
 
-                <button type="submit">Зареєструватися</button>
-            </form>
-            <a href="log.html" class="switch-form">Авторизація</a>
-        </div>
-    </section>
+				<button type="submit">Зареєструватися</button>
+			</form>
+			<a href="log.html" class="switch-form">Авторизація</a>
+		</div>
+	</section>
 
-    <script>
-        // маска для телефону
-        const phoneInput = document.getElementById('phone');
-        const maskOptions = {
-            mask: '+{38}(000) 000-00-00'
-        };
-        const mask = IMask(phoneInput, maskOptions);
+	<script>
+		// маска для телефону
+		const phoneInput = document.getElementById('phone');
+		const maskOptions = {
+			mask: '+{38}(000) 000-00-00'
+		};
+		const mask = IMask(phoneInput, maskOptions);
 
-        // перевірка на введені дані
-        const form = document.getElementById('registerForm');
-        const phoneError = document.getElementById('phoneError');
+		// перевірка на введені дані
+		const form = document.getElementById('registerForm');
+		const phoneError = document.getElementById('phoneError');
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            let valid = true;
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+			let valid = true;
 
-            if (phoneInput.value.length < 17) {
-                phoneError.textContent = 'Будь ласка, введіть повний номер телефону.';
-                valid = false;
-            } else {
-                phoneError.textContent = '';
-            }
+			if (phoneInput.value.length < 17) {
+				phoneError.textContent = 'Будь ласка, введіть повний номер телефону.';
+				valid = false;
+			} else {
+				phoneError.textContent = '';
+			}
 
-            if (valid) {
-                alert('Форма успішно відправлена!');
-                form.reset();
-            }
-        });
+			if (valid) {
+				alert('Форма успішно відправлена!');
+				form.reset();
+			}
+		});
 
-        // при виправленні помилки повідомлення зникає
-        phoneInput.addEventListener('input', () => {
-            phoneError.textContent = '';
-        });
-    </script>
+		// при виправленні помилки повідомлення зникає
+		phoneInput.addEventListener('input', () => {
+			phoneError.textContent = '';
+		});
+	</script>
 </body>
 
 </html>
