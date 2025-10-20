@@ -8,7 +8,6 @@ body {
 	background-color: #111;
 	color: white;
 	height: 100%;
-	overflow: hidden;
 }
 
 
@@ -73,6 +72,7 @@ header {
 	align-items: center;
 	height: 100vh;
 	padding: 10px;
+	flex-direction: column;
 }
 
 
@@ -203,4 +203,12 @@ header {
 
 .date-of-birthday input[type="date"] {
 	flex: 1;
+}
+
+.data_table,
+tr,
+th,
+td {
+	border: 1px solid rgb(187, 50, 50);
+	margin: 20px 0px;
 }

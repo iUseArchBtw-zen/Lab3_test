@@ -12,15 +12,15 @@
 	<section class="forms">
 		<div class="form-container">
 			<h2>Реєстрація</h2>
-			<form action="#" method="post">
-				<input type="email" placeholder="Email" required>
-				<input type="password" placeholder="Пароль" required>
-				<input type="text" placeholder="прізвище" required>
-				<input type="text" placeholder="ім’я " required>
-				<input type="text" placeholder="по батькові" required>
+			<form action="#" name="user_reg">
+				<input type="email" placeholder="Email" name="1">
+				<input type="password" placeholder="Пароль" name="2">
+				<input type="text" placeholder="прізвище " name="3">
+				<input type="text" placeholder="ім’я " name="4">
+				<input type="text" placeholder="по батькові" name="5">
 				<div class="date-of-birthday">
 					<label>Дата народження:</label>
-					<input type="date" required>
+					<input type="date" name="6">
 				</div>
 				<select name="select">
 					<option value="IA-41" selected>IA-41</option>
@@ -28,12 +28,17 @@
 					<option value="IA-43">IA-43</option>
 					<option value="IA-44">IA-44</option>
 				</select>
-				<input type="file" placeholder="виберіть файл" accept="image/png, image/jpeg">
-				<button type="submit">Зареєструватися</button>
+				<input type="file" placeholder="виберіть файл" accept="image/png, image/jpeg" name="7">
+				<button type="button" onclick="getRegData()">Зареєструватися</button>
 			</form>
 			<a href="login.html" class="switch-form">Авторизація</a>
 		</div>
+		<div id="dataTable"></div>
+		<button type="button" onclick="getCheckBoxStatus()">test</button>
+		<button type="button" onclick="rowDelete()">test</button>
 	</section>
+
+	<script src="/Lab3/js/register.js"></script>
 </body>
 
 </html>
